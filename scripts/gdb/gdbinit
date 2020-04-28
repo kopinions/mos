@@ -1,4 +1,8 @@
+shell touch /tmp/gdb || echo "error ignored"
+set inferior-tty /tmp/gdbo
 set architecture i8086
+set tui
+
 target remote :1234
 set disassembly-flavor intel
 display/10i $cs*16+$pc
